@@ -1,5 +1,5 @@
-// src/app/layout.tsx
-import '../styles/globals.css';
+'use client';
+
 import { Provider } from 'react-redux';
 import store from '../redux/store';
 
