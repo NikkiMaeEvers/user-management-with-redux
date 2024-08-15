@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../../../redux/reducers/userReducer';
 import { RootState } from '../../../redux/store';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 const RegisterPage = () => {
   const [name, setName] = useState('');
@@ -47,7 +47,7 @@ const RegisterPage = () => {
 
   const handleProceedToLogin = () => {
     // Redirect to the login page
-    router.push('/auth/login');
+    redirect('/auth/login');
   };
 
   return (

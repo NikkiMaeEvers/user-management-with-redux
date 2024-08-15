@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../../redux/reducers/authReducer';
 import { RootState } from '../../../redux/store';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 const LoginPage = () => {
   const [userId, setUserId] = useState<number | string>('');
@@ -23,16 +23,15 @@ const LoginPage = () => {
       dispatch(loginUser(existingUser.id));
       alert('Login successful!');
 
-      // In Milestone 2, you will redirect to the feed page:
-      // router.push('/feed');
+      // In Milestone 2, you will redirect to the feed page
     } else {
       alert('User not found!');
     }
   };
 
   const handleProceedToRegister = () => {
-    // Redirect to the login page
-    router.push('/auth/register');
+    // Redirect to the Register page
+    redirect('/auth/register');
   };
 
   return (
